@@ -24,17 +24,19 @@ def closest(numbers, target):
 
         i = i + 1
 
-
-    # TODO: find closest number to target (can be equal to target)
-
-
     return result
 
-# print 
-print("CLOSEST VALUE: ", closest(numbers, 25))
+def closest2(numbers, target):
+    if not numbers: # if array is empty
+        return 0
 
+    result = numbers[0]
+    for num in numbers[1:]:
+        diff = abs(target - num)
+        if abs(result - target) >= diff:
+            result = num
+    return result
 
-
-    
-
+# print result
+print("CLOSEST VALUE: ", closest2(numbers, 25))
 

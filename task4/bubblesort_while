@@ -1,0 +1,20 @@
+numbers = [1,8,9,45,-9,-89,456,24,16,42,23,4]
+
+def sorting(numbers):
+    i = 0
+    j = 0
+    while i < len(numbers)-1:
+        while j < len(numbers)-1:
+            if numbers[j] > numbers[j+1]:
+                temp = numbers[j+1]
+                numbers[j+1] = numbers[j]
+                numbers[j] = temp  
+            j = j + 1
+        i = i + 1
+        j = 0
+        
+    return numbers
+
+        
+
+print("sorted: ", sorting(numbers))

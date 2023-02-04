@@ -1,0 +1,26 @@
+numbers = [11, 4, 3, 8]
+
+def sorting(numbers):
+    i = 0
+    while i < len(numbers):
+        min_value = numbers[i]
+        j = i + 1
+        index = i
+        while j < len(numbers):
+            if numbers[j] < min_value:
+                min_value = numbers[j]
+                index = j
+                print(min_value, index)
+            j = j+1
+        temp = numbers[i]
+        numbers[i] = min_value
+        numbers[index] = temp
+        i = i + 1 
+     
+
+    return numbers
+
+print("sorted: ", sorting(numbers))
+                
+                
+            

@@ -1,0 +1,15 @@
+numbers = [1,8,9,45,-9,-89,456,24,16,42,23,4]
+
+def sorting(numbers):
+    for i,num_i in enumerate(numbers[:-1]):
+        for j,num_j in enumerate(numbers[:-1]):
+            if numbers[j] > numbers[j+1]:
+                temp = numbers[j+1]
+                numbers[j+1] = numbers[j]
+                numbers[j] = temp  
+                
+    return numbers
+
+        
+
+print("sorted: ", sorting(numbers))

@@ -1,6 +1,8 @@
-numbers = [1,8,9,45,-9,-89,456,24,16,42,23,4]
+with open("in.txt") as f:
+    content = f.read().strip()
+numbers = [int(i) for i in content.split(",")]
 
-def sorting(numbers):
+def custom_sort(numbers):
     for i,num_i in enumerate(numbers[:-1]):
         for j,num_j in enumerate(numbers[:-1]):
             if numbers[j] > numbers[j+1]:
@@ -12,4 +14,4 @@ def sorting(numbers):
 
         
 
-print("sorted: ", sorting(numbers))
+print("sorted: ", custom_sort(numbers))

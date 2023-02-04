@@ -1,6 +1,8 @@
-numbers = [11, 4, 3, 8]
+with open("in.txt") as f:
+    content = f.read().strip()
+numbers = [int(i) for i in content.split(",")]
 
-def sorting(numbers):
+def custom_sort(numbers):
     i = 0
     while i < len(numbers):
         min_value = numbers[i]
@@ -10,7 +12,6 @@ def sorting(numbers):
             if numbers[j] < min_value:
                 min_value = numbers[j]
                 index = j
-                print(min_value, index)
             j = j+1
         temp = numbers[i]
         numbers[i] = min_value
@@ -20,7 +21,7 @@ def sorting(numbers):
 
     return numbers
 
-print("sorted: ", sorting(numbers))
+print("sorted: ", custom_sort(numbers))
                 
                 
             

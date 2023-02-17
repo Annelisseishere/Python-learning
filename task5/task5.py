@@ -9,13 +9,11 @@ def remove_duplicates(numbers):
 		# This condition is good
         if numbers[i] == numbers[i+1]:
 			# don't remove and insert here but shift numbers[i+2] to numbers[i+1]
-            numbers.remove(numbers[i])
-            numbers.insert(len(numbers), None)
+            for o in range(i+1, len(numbers)-1):
+                numbers[o] = None
+                numbers[o], numbers[o+1] = numbers[o+1], numbers[o]
         else:
             i = i+1
-        
-            
-                
 
     return numbers
 #  print result

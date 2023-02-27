@@ -22,8 +22,3 @@ def custom_sort(numbers):
     return numbers
 
 print("sorted: ", custom_sort(numbers))
-
-
-4,11,3,8,6
-4,3,3,8,6
-

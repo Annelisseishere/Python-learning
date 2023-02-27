@@ -3,7 +3,7 @@ with open("in.txt") as f:
 numbers = [int(i) for i in content.split(",")]
 
 def custom_sort(numbers):
-    for i in range(0, len(numbers)): # TODO: start from 1
+    for i in range(1, len(numbers)): # TODO: start from 1
 		# Assumption: numbers[0:i] are sorted (mathematical interval is [0,i) i.e. without i)
 		# insert numbers[i] at index j where j in [0,i]
 		# idea:
@@ -11,14 +11,19 @@ def custom_sort(numbers):
 		# * iterate in descending order until current number is no longer greater than numbers[i]
 		# * while iterating move current number one index higher
 		# * after while loop insert numbers[i] at index of last greater number
-        j = i 
-        for j in range(0, len(numbers)):
-            if numbers[j-1] > numbers[j] and j > 0:
-                temp = numbers[j-1]
-                numbers[j-1] = numbers[j]
-                numbers[j] = temp
-                j = j-1
+        current = numbers[i]
+        j = i - 1 
+        while j >= 0 and numbers[j] > current:
+            numbers[j+1] = numbers[j]
+            j = j-1
+        numbers[j+1] = current
+                
     
     return numbers
 
 print("sorted: ", custom_sort(numbers))
+
+
+4,11,3,8,6
+4,3,3,8,6
+

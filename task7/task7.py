@@ -30,6 +30,10 @@ def increment(number1, number2):
 			oflow = 1
 	#increment
 		i = i-1
+	
+	#increase digits
+	if oflow == 1:
+		number1.insert(0,1)	
 
 	return number1
 
